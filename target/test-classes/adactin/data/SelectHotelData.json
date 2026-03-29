@@ -1,0 +1,26 @@
+[
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "location": "Adelaide",
+    "roomType": "Double",
+    "rooms": "7",
+    "checkIn": "30/05/2024",
+    "checkOut": "15/06/2024",
+    "adults": "3",
+    "children": "2",
+    "type": "validSelect"
+  },
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "location": "Adelaide",
+    "roomType": "Double",
+    "rooms": "7",
+    "checkIn": "30/05/2024",
+    "checkOut": "15/06/2024",
+    "adults": "3",
+    "children": "2",
+    "type": "noRadioSelection"
+  }
+]

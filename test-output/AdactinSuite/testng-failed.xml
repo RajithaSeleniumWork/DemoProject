@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AdactinSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.example.DemoProject.Adactin_Search_Hotel">
+        <methods>
+          <include name="searchWithInvalidData"/>
+        </methods>
+      </class> <!-- com.example.DemoProject.Adactin_Search_Hotel -->
+      <class name="com.example.DemoProject.Adactin_LoginPage">
+        <methods>
+          <include name="validLogin"/>
+        </methods>
+      </class> <!-- com.example.DemoProject.Adactin_LoginPage -->
+      <class name="com.example.DemoProject.Adactin_SelectHotel">
+        <methods>
+          <include name="selectHotel"/>
+        </methods>
+      </class> <!-- com.example.DemoProject.Adactin_SelectHotel -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [AdactinSuite] -->

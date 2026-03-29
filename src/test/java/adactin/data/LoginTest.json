@@ -1,0 +1,27 @@
+[
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "type": "valid"
+  },
+  {
+    "username": "rajith34567",
+    "password": "6N0",
+    "type": "invalid"
+  },
+  {
+    "username": "",
+    "password": "6NRW30",
+    "type": "emptyuser"
+  },
+  {
+    "username": "rajitha1234567",
+    "password": "",
+    "type": "emptypass"
+  },
+  {
+    "username": "",
+    "password": "",
+    "type": "emptyboth"
+  }
+]

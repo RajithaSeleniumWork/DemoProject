@@ -1,0 +1,41 @@
+[
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "location": "Adelaide",
+    "hotelIndex": 2,
+    "roomType": "Double",
+    "rooms": "7",
+    "checkIn": "30/05/2024",
+    "checkOut": "15/06/2024",
+    "adults": "3",
+    "children": "2",
+    "type": "valid"
+  },
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "location": "Adelaide",
+    "hotelIndex": 2,
+    "roomType": "Double",
+    "rooms": "7",
+    "checkIn": "30/05/2024",
+    "checkOut": "29/05/2024",
+    "adults": "3",
+    "children": "2",
+    "type": "invaliddate"
+  },
+  {
+    "username": "rajitha1234567",
+    "password": "6NRW30",
+    "location": "- Select Location -",
+    "hotelIndex": 2,
+    "roomType": "Double",
+    "rooms": "7",
+    "checkIn": "30/05/2024",
+    "checkOut": "15/06/2024",
+    "adults": "3",
+    "children": "2",
+    "type": "missinglocation"
+  }
+]
