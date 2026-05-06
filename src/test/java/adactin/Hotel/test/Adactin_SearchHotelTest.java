@@ -19,13 +19,13 @@ public class Adactin_SearchHotelTest extends BaseClass{
 	@Test(dataProvider = "searchData")
 	public void searchHotelTest(HashMap<String, String> input) {
 
-	    LoginPage lp = new LoginPage(driver);
+	    LoginPage lp = new LoginPage(getDriver());
 	    lp.loginApplication(
 	            input.get("username"),
 	            input.get("password")
 	    );
 
-	    SearchHotelPage sp = new SearchHotelPage(driver);
+	    SearchHotelPage sp = new SearchHotelPage(getDriver());
 
 	    sp.searchHotel(
 	            input.get("location"),
@@ -42,7 +42,7 @@ public class Adactin_SearchHotelTest extends BaseClass{
 
 	    if (type.equals("valid")) {
 
-	        Assert.assertTrue(driver.getCurrentUrl().contains("SelectHotel"));
+	        Assert.assertTrue(getDriver().getCurrentUrl().contains("SelectHotel"));
 
 	    } else if (type.equals("invaliddate")) {
 

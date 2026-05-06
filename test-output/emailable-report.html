@@ -8,45 +8,30 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">13,009</td><td></td><td></td></tr>
+<tr><th colspan="8">CrossBrowserSuite</th></tr>
+<tr><td><a href="#t0">ChromeTest</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">70,085</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">EdgeTest</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">71,738</td><td></td><td></td></tr>
+<tr><td><a href="#t2">FirefoxTest</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">111,368</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">15</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">253,191</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">adactin.Hotel.test.Adactin_LoginTest</td><td><a href="#m0">loginTest</a></td><td rowspan="3">1774761875092</td><td rowspan="3">372</td></tr><tr class="failedeven"><td><a href="#m1">loginTest</a></td></tr><tr class="failedeven"><td><a href="#m2">loginTest</a></td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">adactin.Hotel.test.Adactin_LoginTest</td><td><a href="#m3">loginTest</a></td><td rowspan="2">1774761877625</td><td rowspan="2">137</td></tr><tr class="passedeven"><td><a href="#m4">loginTest</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">CrossBrowserSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">adactin.Hotel.test.Adactin_LoginTest</td><td><a href="#m0">loginTest</a></td><td rowspan="5">1778080572473</td><td rowspan="5">10211</td></tr><tr class="passedeven"><td><a href="#m1">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m2">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m3">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m4">loginTest</a></td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">EdgeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">adactin.Hotel.test.Adactin_LoginTest</td><td><a href="#m5">loginTest</a></td><td rowspan="5">1778080558761</td><td rowspan="5">5513</td></tr><tr class="passedeven"><td><a href="#m6">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m7">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m8">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m9">loginTest</a></td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">FirefoxTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">adactin.Hotel.test.Adactin_LoginTest</td><td><a href="#m10">loginTest</a></td><td rowspan="5">1778080651466</td><td rowspan="5">466</td></tr><tr class="passedeven"><td><a href="#m11">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m12">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m13">loginTest</a></td></tr><tr class="passedeven"><td><a href="#m14">loginTest</a></td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=invalid, password=6N0, username=rajith34567}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=146.0.7680.165)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [282c0a9f7a2b355e452d207e0c4c7dbb, getElementText {id=f.EAF6D43F2B3270491DC6B1051D26B1C1.d.78CA3F896FE31140832E6228920D6266.e.36}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\rajit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59512}, goog:processID: 24864, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59512/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (282c0a9f7a2b355e452d207e0c4c7dbb)] -&gt; class name: auth_error]
-Session ID: 282c0a9f7a2b355e452d207e0c4c7dbb
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy16.getText(Unknown Source)
-	at adactin.Hotel.PageObject.LoginPage.getInvalidLoginError(LoginPage.java:68)
-	at adactin.Hotel.test.Adactin_LoginTest.loginTest(Adactin_LoginTest.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyboth, password=, username=}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Enter Password] but found []
-	at adactin.Hotel.test.Adactin_LoginTest.loginTest(Adactin_LoginTest.java:50)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=valid, password=6NRW30, username=rajitha1234567}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Adactin.com - Search Hotel] but found [Adactin.com - Hotel Reservation System]
-	at adactin.Hotel.test.Adactin_LoginTest.loginTest(Adactin_LoginTest.java:32)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyuser, password=6NRW30, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptypass, password=, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeTest</h2><h3 id="m0">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=invalid, password=6N0, username=rajith34567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyboth, password=, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyuser, password=6NRW30, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptypass, password=, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=valid, password=6NRW30, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>EdgeTest</h2><h3 id="m5">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=valid, password=6NRW30, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyuser, password=6NRW30, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptypass, password=, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=invalid, password=6N0, username=rajith34567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyboth, password=, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>FirefoxTest</h2><h3 id="m10">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptypass, password=, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyboth, password=, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=emptyuser, password=6NRW30, username=}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=valid, password=6NRW30, username=rajitha1234567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">adactin.Hotel.test.Adactin_LoginTest#loginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{type=invalid, password=6N0, username=rajith34567}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

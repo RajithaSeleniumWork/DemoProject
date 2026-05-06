@@ -22,7 +22,7 @@ public class BookingConfirmationTest extends BaseClass {
 	    public void bookingConfirmationTest(HashMap<String, String> input) {
 
 	        // Login
-		 LoginPage lp = new LoginPage(driver);
+		 LoginPage lp = new LoginPage(getDriver());
 		    lp.loginApplication(
 		            input.get("username"),
 		            input.get("password")
@@ -30,7 +30,7 @@ public class BookingConfirmationTest extends BaseClass {
 
 
 	        // Search Hotel
-	        SearchHotelPage sp = new SearchHotelPage(driver);
+	        SearchHotelPage sp = new SearchHotelPage(getDriver());
 
 	        SelectHotelPage shp = sp.searchHotel(
 	                input.get("location"),
@@ -78,7 +78,7 @@ public class BookingConfirmationTest extends BaseClass {
 	            ip.clickItinerary();
 
 	            Assert.assertTrue(
-	                    driver.getCurrentUrl().contains("BookedItinerary"),
+	            		getDriver().getCurrentUrl().contains("BookedItinerary"),
 	                    "Navigation failed"
 	            );
 	        }
