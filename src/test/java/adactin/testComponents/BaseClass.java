@@ -3,108 +3,94 @@ package adactin.testComponents;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import adactin.Hotel.PageObject.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public WebDriver driver;
-	public LoginPage loginlocators;
-	
+    // ThreadLocal for parallel execution
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    public Properties prop;
 
-	    public WebDriver initializeDriver() throws IOException {
+    // Getter method
+    public WebDriver getDriver() {
+        return driver.get();
+    }
 
-			Properties prop = new Properties();
-			FileInputStream fis = new FileInputStream(
-					"C:\\Rajitha\\TestNGFramework\\DemoProject\\src\\test\\java\\adacin\\resources\\GlobalData.properties");
-			prop.load(fis);
-			String browserName =System.getProperty("browser")!=null ? System.getProperty("browser"): prop.getProperty("browser");
-			 //prop.getProperty("browser");
-			
-			if (browserName.equalsIgnoreCase("chrome")) {
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+    // Initialize Driver based on browser
+    public WebDriver initializeDriver(String browserName) throws IOException {
 
-			} else if (browserName.equalsIgnoreCase("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
+        prop = new Properties();
+        FileInputStream fis = new FileInputStream(
+                System.getProperty("user.dir") + "\\src\\test\\java\\adacin\\resources\\GlobalData.properties");
+        prop.load(fis);
 
-			} else if (browserName.equalsIgnoreCase("edge")) {
-				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
+        WebDriver driverInstance = null;
 
-			}
+        if (browserName.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driverInstance = new ChromeDriver();
 
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			
-			driver.manage().window().maximize();
-			return driver;
+        } else if (browserName.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driverInstance = new FirefoxDriver();
 
-		}
+        } else if (browserName.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driverInstance = new EdgeDriver();
 
+        } else {
+            throw new RuntimeException("Browser not supported");
+        }
 
-		 public List<HashMap<String, String>> getJsonDataToMap(String filepath) throws IOException {
-		        // Read the JSON file content as a string
-		        String jsonContent = FileUtils.readFileToString(
-		                new File(filepath),
-		                StandardCharsets.UTF_8);
+        driver.set(driverInstance);
 
-		        // Create an ObjectMapper instance
-		        ObjectMapper mapper = new ObjectMapper();
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().window().maximize();
 
-		        // Convert the JSON string to a list of hash maps
-		        List<HashMap<String, String>> data = mapper.readValue(jsonContent,
-		                new TypeReference<List<HashMap<String, String>>>() {
-		                });
+        return getDriver();
+    }
 
-		        return data;
-		    }
-		 
-		 public String getScreenshot(String testCaseName,WebDriver driver) throws IOException {
-			 TakesScreenshot ts=(TakesScreenshot)driver;
-			 File source=ts.getScreenshotAs(OutputType.FILE);
-			 File file=new File("C:\\Rajitha\\TestNGFramework\\DemoProject\\src\\test\\java\\adactin\\reports\\"+testCaseName+".png");
-			 FileUtils.copyFile(source, file);
-			 return System.getProperty("user.dir")+"\\src\\test\\java\\adactin\\reports\\"+ testCaseName+".png";
-		 }
-		 
+    // Launch Application
+    @Parameters("browser")
+    @BeforeMethod
+    public void launchApplication(@Optional String browser) throws IOException {
 
-			@BeforeMethod
-			public LoginPage launchApplication() throws IOException 
-			{
-				driver=initializeDriver();
-				loginlocators = new LoginPage(driver);
-				loginlocators.goTo();
-				
-				
-		        
-				return  new LoginPage(driver);
-			}
-			
-			@AfterMethod
-			public void tearDown()
-			{
-				driver.close();
-			}
-			
+        initializeDriver(browser);
 
+        String url = prop.getProperty("URL");
+        getDriver().get(url);
+    }
+
+    // Screenshot method
+    public String getScreenshot(String testCaseName) throws IOException {
+
+        TakesScreenshot ts = (TakesScreenshot) getDriver();
+        File source = ts.getScreenshotAs(OutputType.FILE);
+
+        File file = new File(System.getProperty("user.dir") +
+                "/reports/" + testCaseName + ".png");
+
+        FileUtils.copyFile(source, file);
+
+        return file.getAbsolutePath();
+    }
+
+    // Close browser
+    @AfterMethod
+    public void tearDown() {
+        if (getDriver() != null) {
+            getDriver().quit();
+            driver.remove(); // ✅ VERY IMPORTANT for parallel
+        }
+    }
 }

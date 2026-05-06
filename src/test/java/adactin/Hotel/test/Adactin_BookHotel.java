@@ -22,13 +22,13 @@ public class Adactin_BookHotel extends BaseClass{
 	@Test(dataProvider = "bookHotelData")
 	public void bookHotelTest(HashMap<String, String> input) {
 
-	    LoginPage lp = new LoginPage(driver);
+	    LoginPage lp = new LoginPage(getDriver());
 	    lp.loginApplication(
 	            input.get("username"),
 	            input.get("password")
 	    );
 
-	    SearchHotelPage sp = new SearchHotelPage(driver);
+	    SearchHotelPage sp = new SearchHotelPage(getDriver());
 	    sp.searchHotel(
 	            input.get("location"),
 	            Integer.parseInt(input.get("hotelIndex")),
@@ -40,11 +40,11 @@ public class Adactin_BookHotel extends BaseClass{
 	            input.get("children")
 	    );
 
-	    SelectHotelPage shp = new SelectHotelPage(driver);
+	    SelectHotelPage shp = new SelectHotelPage(getDriver());
 	    shp.selectFirstHotel();
 	    shp.clickContinue();
 
-	    BookHotelPage bp = new BookHotelPage(driver);
+	    BookHotelPage bp = new BookHotelPage(getDriver());
 
 	    String type = input.get("type").toLowerCase();
 

@@ -23,13 +23,13 @@ public class Adactin_SelectHotelTest extends BaseClass{
 	@Test(dataProvider = "selectHotelData")
 	public void selectHotelTest(HashMap<String, String> input) {
 
-	    LoginPage lp = new LoginPage(driver);
+	    LoginPage lp = new LoginPage(getDriver());
 	    lp.loginApplication(
 	            input.get("username"),
 	            input.get("password")
 	    );
 
-	    SearchHotelPage sp = new SearchHotelPage(driver);
+	    SearchHotelPage sp = new SearchHotelPage(getDriver());
 	    sp.searchHotel(
 	            input.get("location"),
 	            2,
@@ -41,7 +41,7 @@ public class Adactin_SelectHotelTest extends BaseClass{
 	            input.get("children")
 	    );
 
-	    SelectHotelPage shp = new SelectHotelPage(driver);
+	    SelectHotelPage shp = new SelectHotelPage(getDriver());
 
 	    String type = input.get("type").toLowerCase();
 

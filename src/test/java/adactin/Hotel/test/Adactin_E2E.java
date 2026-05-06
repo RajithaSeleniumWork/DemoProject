@@ -29,7 +29,7 @@ public class Adactin_E2E extends BaseClass{
 
 	        // LOGIN
 		    // Login
-			 LoginPage lp = new LoginPage(driver);
+			 LoginPage lp = new LoginPage(getDriver());
 			    lp.loginApplication(
 			            input.get("username"),
 			            input.get("password")
@@ -38,7 +38,7 @@ public class Adactin_E2E extends BaseClass{
 	
 
 	        // SEARCH HOTEL
-	        SearchHotelPage sp = new SearchHotelPage(driver);
+	        SearchHotelPage sp = new SearchHotelPage(getDriver());
 
 	        SelectHotelPage shp = sp.searchHotel(
 	                input.get("location"),
