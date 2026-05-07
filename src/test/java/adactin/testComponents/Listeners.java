@@ -9,7 +9,9 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.*;
 
+
 import adacin.resources.ExtentReporterNG;
+
 
 public class Listeners extends BaseClass implements ITestListener {
 
@@ -32,17 +34,18 @@ public class Listeners extends BaseClass implements ITestListener {
 
         extentTest.get().fail(result.getThrowable());
 
-        // ✅ Get driver safely from ThreadLocal
-        WebDriver driver = getDriver();
+        WebDriver driver = getDriver(); // from BaseClass ThreadLocal driver
 
         String methodName = result.getMethod().getMethodName();
 
         try {
-            String path = getScreenshot(methodName);
+            String path = getScreenshot(methodName, driver);
             extentTest.get().addScreenCaptureFromPath(path, methodName);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        extentTest.get().log(Status.FAIL, "Test Failed");
     }
 
     @Override

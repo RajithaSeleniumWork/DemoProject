@@ -6,8 +6,8 @@
       <class name="adactin.Hotel.test.Adactin_LoginTest">
         <methods>
           <include name="launchApplication"/>
-          <include name="loginTest" invocation-numbers="0 1 4"/>
           <include name="tearDown"/>
+          <include name="loginTest" invocation-numbers="4"/>
         </methods>
       </class> <!-- adactin.Hotel.test.Adactin_LoginTest -->
     </classes>
