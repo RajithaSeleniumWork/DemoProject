@@ -29,7 +29,7 @@ public class BaseClass {
         // Load properties
         prop = new Properties();
         FileInputStream fis = new FileInputStream(
-                System.getProperty("user.dir") + "/src/test/resources/GlobalData.properties");
+                System.getProperty("user.dir") + "\\src\\test\\resources\\GlobalData.properties");
         prop.load(fis);
 
         if (browserName == null || browserName.isEmpty()) {
