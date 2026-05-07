@@ -16,7 +16,6 @@ public class Adactin_LoginTest extends BaseClass {
     @Test(dataProvider = "loginData")
     public void loginTest(HashMap<String, String> input) {
 
-        // ✅ Use getDriver() (Thread-safe)
         LoginPage lp = new LoginPage(getDriver());
 
         lp.loginApplication(
@@ -28,39 +27,40 @@ public class Adactin_LoginTest extends BaseClass {
 
         switch (type) {
 
-        case "valid":
-            Assert.assertEquals(lp.getPageTitle(),
-                    "Adactin.com - Search Hotel");
-            break;
+            case "valid":
+                Assert.assertEquals(lp.getPageTitle(), "Adactin.com - Search Hotel");
+                break;
 
-        case "invalid":
-            Assert.assertTrue(lp.getInvalidLoginError().contains("Invalid Login"));
-            break;
+            case "invalid":
+                Assert.assertTrue(lp.getInvalidLoginError().contains("Invalid Login"));
+                break;
 
-        case "emptyuser":
-            Assert.assertEquals(lp.getUsernameError(), "Enter Username");
-            break;
+            case "emptyuser":
+                Assert.assertEquals(lp.getUsernameError(), "Enter Username");
+                break;
 
-        case "emptypass":
-            Assert.assertEquals(lp.getPasswordError(), "Enter Password");
-            break;
+            case "emptypass":
+                Assert.assertEquals(lp.getPasswordError(), "Enter Password");
+                break;
 
-        case "emptyboth":
-            Assert.assertEquals(lp.getUsernameError(), "Enter Username");
-            Assert.assertEquals(lp.getPasswordError(), "");
-            break;
+            case "emptyboth":
+                Assert.assertEquals(lp.getUsernameError(), "Enter Username");
+                Assert.assertEquals(lp.getPasswordError(), "");
+                break;
+
+            default:
+                Assert.fail("Invalid test data type: " + type);
         }
     }
 
-    // ✅ Enable parallel execution for data
     @DataProvider(name = "loginData", parallel = false)
     public Object[][] getData() throws IOException {
 
         DataReader reader = new DataReader();
 
         List<HashMap<String, String>> data = reader.getJsonDataToMap(
-                System.getProperty("user.dir") +
-                "/src/test/java/adactin/data/LoginTest.json"
+                System.getProperty("user.dir")
+                        + "/src/test/java/adactin/data/LoginTest.json"
         );
 
         Object[][] dataProvider = new Object[data.size()][1];
